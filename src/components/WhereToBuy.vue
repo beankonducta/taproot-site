@@ -55,12 +55,12 @@ export default {
   <style scoped>
 .where-to-buy {
   position: relative;
-  background: white;
+  background: #043939;
   text-align: left;
 }
 .spacer {
   height: 1vh;
-  border-bottom: 1px solid #003b4a;
+  border-bottom: 1px solid white;
   width: 50%;
   margin-bottom: 1vh;
 }

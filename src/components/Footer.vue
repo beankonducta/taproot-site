@@ -1,24 +1,6 @@
 <template>
   <div>
   <div class="footer">
-    <div class="arrow">
-      <svg
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        x="0px"
-        y="0px"
-        viewBox="0 0 144 48.95"
-        style="enable-background: new 0 0 144 48.95"
-        xml:space="preserve"
-      >
-        <path
-          :fill="arrowColor"
-          d="M2.66,0.25C29.78,6.92,53.5,24.17,70.43,48.11c0.79,1.12,2.4,1.12,3.19,0c16.96-23.98,40.73-41.25,67.89-47.9
-	C142.07,0.11,142.92,0,144,0H0C1.2,0,2.12,0.14,2.66,0.25z"
-        />
-      </svg>
-    </div>
     <div id="about">
       <div class="title">about</div>
       <div class="text">
@@ -79,12 +61,11 @@ export default {
   margin-top: -2vh;
   margin-bottom: 1vh;
   font-size: calc(.2rem + 1vw);
-  font-family: "BNBergen";
+  font-family: "PGGothicHeadline-Regular";
   text-transform: uppercase;
   letter-spacing: .12rem;
   z-index: 99;
   width: 101%;
-  background: white;
 }
 
 .footer-img {
@@ -100,7 +81,7 @@ export default {
 
 #contact {
   font-size: calc(0.4rem + 1vw);
-  font-family: "BnBergen";
+  font-family: "PGGothicHeadline-Regular";
   text-transform: uppercase;
   letter-spacing: 0.12rem;
 }

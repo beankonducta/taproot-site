@@ -3,9 +3,10 @@
     <NavBar @switchAlc="switchAlc($event)"></NavBar>
     <Header></Header>
     <Product v-for="(product) in products" :key="product.title" :img="product.img" :title="product.title"
-      :caption="product.caption" :color="product.color" :bg="product.bg" :scrollY="scrollY"
+      :caption="product.caption" :color="product.color" :bg="product.bg" :accent="product.accent" :scrollY="scrollY"
       :cocktailHeader="alc ? product.cocktailHeader : product.mocktailHeader"
-      :cocktailBody="alc ? product.cocktailBody : product.mocktailBody" :alc="alc" />
+      :cocktailBody="alc ? product.cocktailBody : product.mocktailBody" :alc="alc"
+      :accentImage="product.accentImage" :accentSide="product.accentSide" />
     <Footer></Footer>
     <!-- <Product
       :key="products[currentProduct].title"
@@ -30,28 +31,17 @@ export default {
   data() {
     return {
       alc: false,
-      // light then dark, mellona, pomona, khloris, tonic, water, accent gold color last
-      colors: [
-        "#A191B2",
-        "#003B4A",
-        "#BDCF9B",
-        "#1A5632",
-        "#EFB8A9",
-        "#702E3E",
-        "#B2E1D8",
-        "#003B4A",
-        "#FFFFFF",
-        "#415364",
-        "#AE841F",
-      ],
       currentProduct: 0,
       products: [
         {
           img: require("./assets/images/Blackberry-Mint-Web.png"),
+          accentImage: require("./assets/images/BBM.svg"),
+          accentSide: "right",
           title: "Blackberry Mint",
-          caption: "",
-          color: "#702E3E",
-          bg: "#EFB8A9",
+          caption: "We start with fresh Blackberry puree and add mint to create a refreshing, lightly sweetened soda.",
+          color: "#7e224b",
+          bg: "#00996e",
+          accent: "#bdcce9",
           cocktailHeader: "Cocktail Idea",
           cocktailBody: `G and Tea  <br><br>
                          - 2 oz Gin, the more herbal the better <br>
@@ -69,10 +59,13 @@ export default {
         },
         {
           img: require("./assets/images/Cherry-Limeade-Template-Web.png"),
+          accentImage: require("./assets/images/CL.svg"),
+          accentSide: "left",
           title: "Cherry Limeade",
           caption: "",
-          color: "#003B4A",
-          bg: "#A191B2",
+          color: "#4eb748",
+          bg: "#991b35",
+          accent: "#fccfc6",
           cocktailHeader: "Cocktail Idea",
           cocktailBody: `Earl Grey Collins <br><br>
                          - 2 oz Dry Gin <br>
@@ -91,11 +84,37 @@ export default {
                          Stir over ice and serve in a highball glass. Garnish with orange and mint.`
         },
         {
+          img: require("./assets/images/Rootbeer-Template-Web.png"),
+          accentImage: require("./assets/images/RB.svg"),
+          accentSide: "right",
+          title: "Rootbeer",
+          caption: "",
+          color: "#733213",
+          bg: "#ae8269",
+          accent: "#e0cfc4",
+          cocktailHeader: "Cocktail Idea",
+          cocktailBody: `Whiskey Tonic <br><br>
+                         - 2 oz whiskey (bourbon works well) <br>
+                         - 6 oz Augury Tonic Water <br>
+                         - Lemon wheel <br><br>
+                         Stir over ice and serve in a highball glass. Garnish with lemon wheel.`,
+          mocktailHeader: "Mocktail Idea",
+          mocktailBody: `Lemon-Lime Tonic <br><br>
+                         - 3 oz Taproot Lemon Lime Lavender Soda <br>
+                         - 1 oz fresh lemon or lime juice <br>
+                         - 4 oz Augury Tonic Water <br>
+                         - Lemon or lime wheel <br><br>
+                         Stir over ice and serve in a highball glass. Garnish with lemon wheel.`
+        },
+        {
           img: require("./assets/images/Lemon-Lime-Lavender-Web.png"),
+          accentImage: require("./assets/images/LLL.svg"),
+          accentSide: "left",
           title: "Lemon Lime Lavender",
           caption: "",
-          color: "#1A5632",
-          bg: "#BDCF9B",
+          color: "#532b63",
+          bg: "#6c8cc7",
+          accent: "#c4d82e",
           cocktailHeader: "Cocktail Idea",
           cocktailBody: `Scotch Green Tea <br><br>
                          - 2 oz blended scotch <br>
@@ -114,10 +133,13 @@ export default {
         },
         {
           img: require("./assets/images/Lemongrass-Ginger-Web.png"),
-          title: "Lemongrass Ginger Ale",
-          caption: "Simple, Light and Bubbly Sparkling Water",
-          color: "#415364",
-          bg: "#FFFFFF",
+          accentImage: require("./assets/images/LGG.svg"),
+          accentSide: "right",
+          title: "Lemongrass Ginger",
+          caption: "",
+          color: "#884225",
+          bg: "#76b043",
+          accent: "#fede36",
           cocktailHeader: "Cocktail Idea",
           cocktailBody: `Tequila Soda <br><br>
                          - 2 oz blanco tequila <br>
@@ -132,31 +154,14 @@ export default {
                          Stir over ice and serve in your favorite glass. Garnish with lime wheel.`,
         },
         {
-          img: require("./assets/images/Rootbeer-Template-Web.png"),
-          title: "Rootbeer",
-          caption: "Deliciously Crisp Citrus Based Tonic",
-          color: "#003B4A",
-          bg: "#B2E1D8",
-          cocktailHeader: "Cocktail Idea",
-          cocktailBody: `Whiskey Tonic <br><br>
-                         - 2 oz whiskey (bourbon works well) <br>
-                         - 6 oz Augury Tonic Water <br>
-                         - Lemon wheel <br><br>
-                         Stir over ice and serve in a highball glass. Garnish with lemon wheel.`,
-          mocktailHeader: "Mocktail Idea",
-          mocktailBody: `Lemon-Lime Tonic <br><br>
-                         - 3 oz Taproot Lemon Lime Lavender Soda <br>
-                         - 1 oz fresh lemon or lime juice <br>
-                         - 4 oz Augury Tonic Water <br>
-                         - Lemon or lime wheel <br><br>
-                         Stir over ice and serve in a highball glass. Garnish with lemon wheel.`
-        },
-        {
-          img: require("./assets/images/Rootbeer-Template-Web.png"),
+          img: require("./assets/images/Strawberry-Fields-Template-Web.png"),
+          accentImage: require("./assets/images/SF.svg"),
+          accentSide: "left",
           title: "Strawberry Fields",
-          caption: "Strawberry Fields (With Glitter)",
-          color: "#003B4A",
-          bg: "#B2E1D8",
+          caption: "",
+          color: "#b70063",
+          bg: "#d787a3",
+          accent: "#f0d5dd",
           cocktailHeader: "Cocktail Idea",
           cocktailBody: `Whiskey Tonic <br><br>
                          - 2 oz whiskey (bourbon works well) <br>
@@ -213,27 +218,35 @@ export default {
 
 <style>
 @font-face {
-  font-family: "BNMainz";
-  src: url("./assets/fonts/BNMainz.woff2") format("woff2"),
-    url("./assets/fonts/BNMainz.woff") format("woff");
+  font-family: "BarmenoBold";
+  src: url("./assets/fonts/Barmeno Bold.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Nightingale";
-  src: url("./assets/fonts/Nightingale.woff2") format("woff2"),
-    url("./assets/fonts/Nightingale.woff") format("woff");
+  font-family: "BarmenoMedium";
+  src: url("./assets/fonts/Barmeno Medium.woff") format("woff");
 }
 
 @font-face {
-  font-family: "BNBergen";
-  src: url("./assets/fonts/BNBergen.woff2") format("woff2"),
-    url("./assets/fonts/BNBergen.woff") format("woff");
+  font-family: "BarmenoRegular";
+  src: url("./assets/fonts/Barmeno Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "PGGothicHeadline-Regular";
+  src: url("./assets/fonts/PGGothicHeadline-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "PGGothicHeadline-Tall";
+  src: url("./assets/fonts/PGGothicHeadline-Tall.woff") format("woff");
 }
 
 body {
   width: 101vw;
   margin-left: -1vw;
   overflow-x: hidden;
+  background: #043939;
 }
 
 #app {
@@ -246,27 +259,28 @@ body {
   text-align: center;
   align-content: center;
   position: relative;
+  background: #043939;
 }
 
 a {
-  color: #ae841f;
+  color: white;
   text-decoration: none;
 }
 
 a:hover {
-  color: #bea977;
+  color: #e8dfdf;
 }
 
 a:visited {
-  color: #ae841f;
+  color: #ffffff;
 }
 
 a:visited:hover {
-  color: #bea977;
+  color: #e8dfdf;
 }
 
 a:active {
-  color: #bea977;
+  color: #e8dfdf;
 }
 
 @media screen and (max-width: 1099px) {
@@ -276,33 +290,33 @@ a:active {
 
   .title {
 	font-size: 2rem;
-	font-family: "BNMainz";
+	font-family: "BarmenoBold";
 	text-transform: uppercase;
-	letter-spacing: .75rem;
-  color: #003b4a;
+	letter-spacing: .25rem;
+  color: #5bc5cd;
 }
 
 .subtitle {
 	font-size: 1.5rem;
-	font-family: "BNMainz";
+	font-family: "BarmenoMedium";
 	text-transform: uppercase;
-	letter-spacing: .7rem;
-  color: #003b4a;
+	letter-spacing: .15rem;
+  color: #5bc5cd;
 }
 
 .caption {
 	font-size: 1rem;
-	font-family: "Nightingale";
+	font-family: "PGGothicHeadline-Regular";
 	text-transform: uppercase;
-	letter-spacing: .12rem
+	letter-spacing: .1rem
 }
 
 .text {
   font-size: .5rem;
-  font-family: "BNBergen";
-  color: #003b4a;
+  font-family: "BarmenoRegular";
+  color: white;
   text-transform: uppercase;
-  line-height: 1.2rem;
+  line-height: 1rem;
 	letter-spacing: .1rem;
 }
 
@@ -319,31 +333,31 @@ a:active {
   }
   .title {
 	font-size: 4rem;
-	font-family: "BNMainz";
+  font-family: "BarmenoBold";
 	text-transform: uppercase;
-	letter-spacing: 1rem;
-  color: #003b4a;
+	letter-spacing: .5rem;
+  color: #5bc5cd;
 }
 
 .subtitle {
 	font-size: 2.5rem;
-	font-family: "BNMainz";
+  font-family: "BarmenoMedium";
 	text-transform: uppercase;
-	letter-spacing: .7rem;
-  color: #003b4a;
+	letter-spacing: .3rem;
+  color: #5bc5cd;
 }
 
 .caption {
 	font-size: 1.5rem;
-	font-family: "Nightingale";
+	font-family: "PGGothicHeadline-Regular";
 	text-transform: uppercase;
 	letter-spacing: .12rem
 }
 
 .text {
   font-size: 1rem;
-  font-family: "BNBergen";
-  color: #003b4a;
+  font-family: "BarmenoRegular";
+  color: white;
   text-transform: uppercase;
   line-height: 1.2rem;
 	letter-spacing: .1rem;

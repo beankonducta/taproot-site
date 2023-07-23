@@ -2,23 +2,23 @@
 	<div class="product" :ref="title" :style="{ background: bg }" id="products">
 		<div class="product-wrapper fade" :class="[{ visible: isVisible }]" :style="{ opacity: opacity }"
 			:id="`${title.replace(' ', '-')}`">
-			<div class="title" :style="{ color: color }">{{ title }}</div>
+			<img :src="accentImage" :class="accentClass" />
+			<div class="title" :class="titleClass" :style="{ color: color }">{{ title }}</div>
 			<img class="image slide-in-can" v-bind:src="img" />
-			<div class="caption" :style="{ color: compColor }">{{ caption }}</div>
+			<div class="caption" :style="{ color: accent }">{{ caption }}</div>
 		</div>
-		<div class="cocktail" :style="{ background: this.color }"
+		<!-- <div class="cocktail" :style="{ background: this.color }"
 			:class="[isVisible ? 'slide-in' : 'slide-out', screenWidth <= minWidth ? 'hide' : '']">
 			<div class="subtitle" :style="{color: this.bg, opacity: opacity }">{{ cocktailHeader }}</div>
 			<div class="text" :style="{color: this.bg, opacity: opacity }" v-html="cocktailBody">
 
 			</div>
-		</div>
-		<div class="cocktail-mobile" :style="{ background: this.color}"
-			:class="[screenWidth > minWidth ? 'hide' : '']">
+		</div> -->
+		<!-- <div class="cocktail-mobile" :style="{ background: this.color}">
 			<div class="subtitle cocktail-mobile-header" :style="{color: this.bg, opacity: opacity }">{{ cocktailHeader }}</div>
 			<div class="text cocktail-mobile-body" :style="{color: this.bg, opacity: opacity }" v-html="cocktailBody">
 			</div>
-		</div>
+		</div> -->
 	</div>
 </template>
 
@@ -29,14 +29,17 @@ export default {
 	name: "Product",
 	props: {
 		img: String,
+		accentImage: String,
 		title: String,
 		caption: String,
 		color: String,
+		accent: String,
 		bg: String,
 		scrollY: Number,
 		cocktailHeader: String,
 		cocktailBody: String,
-		alc: Boolean
+		alc: Boolean,
+		accentSide: String
 	},
 	data() {
 		return {
@@ -83,6 +86,12 @@ export default {
 		},
 	},
 	computed: {
+		accentClass() {
+			return this.accentSide === "right" ? "accent-image-right" : "accent-image-left";
+		},
+		titleClass() {
+			return this.accentSide === "right" ? "title-right" : "title-left";
+		},
 		compColor() {
 			return tinycolor(this.color).complement().toHexString();
 		},
@@ -117,8 +126,8 @@ export default {
 	width: 100%;
 	text-align: center;
 	margin: 0 auto;
-	padding-top: 10vh;
-	padding-bottom: 10vh;
+	padding-top: 100px;
+	padding-bottom: 200px;
 	position: relative;
 }
 
@@ -126,6 +135,34 @@ export default {
 	width: 80%;
 	text-align: center;
 	margin: 0 auto;
+}
+
+
+.title-right {
+	position: absolute;
+	top: 5%;
+	left: 10%;
+}
+
+.title-left {
+	position: absolute;
+	top: 5%;
+	right: 10%;
+}
+
+.accent-image-right {
+	position: absolute;
+	top: -15%;
+	right: 0;
+	height: 40%;
+	max-width: 600px;
+}
+.accent-image-left {
+	position: absolute;
+	top: -15%;
+	left: 0;
+	height: 40%;
+	max-width: 600px;
 }
 
 .image {
@@ -156,19 +193,20 @@ export default {
 	padding-right: 1%;
 	padding-left: 2%;
 	border-radius: 0% 1% 1% 0%;
-	box-shadow: -2px 5px 10px rgba(46, 35, 35, 0.1);
+	box-shadow: -2px 3px 2px rgba(30, 8, 8, 0.167);
 }
 
 .cocktail-mobile {
-	width: 80%;
+	width: 50%;
 	position: relative;
 	padding-top: 2.5%;
 	padding-bottom: 2.5%;
 	padding-right: 10%;
 	padding-left: 10%;
 	margin-top: 5%;
-	border-radius: 0% 1% 1% 0%;
-	box-shadow: -2px 5px 10px rgba(46, 35, 35, 0.1);
+	margin-bottom: 0;
+	box-shadow: -2px 3px 2px rgba(30, 8, 8, 0.167);
+	margin: 0 auto;
 }
 
 .cocktail-mobile-body {
@@ -179,6 +217,8 @@ export default {
 .cocktail-mobile-header {
 	margin-bottom: 30px;
 	margin-top: 10px;
+	color: white !important;
+	z-index: 5;
 }
 
 .cocktail a {

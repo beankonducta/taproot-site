@@ -71,14 +71,14 @@ export default {
   margin-bottom: 1vh;
   padding-bottom: 1vh;
   font-size: calc(.2rem + 1vw);
-  font-family: "BNBergen";
+  font-family: "PGGothicHeadline-Regular";
   text-transform: uppercase;
   letter-spacing: .12rem;
   position: fixed;
   z-index: 99;
   width: 101%;
-  background: white;
-  box-shadow: -2px 5px 10px rgba(46, 35, 35, 0.1);
+  background: #043939;
+  box-shadow: -2px 3px 2px rgba(30, 8, 8, 0.167);
 }
 
 .alc {

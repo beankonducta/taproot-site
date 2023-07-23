@@ -1,7 +1,7 @@
 <template>
   <div class="header">
       <div id="inner">
-        <!-- <img id="header-logo" :src="require('@/assets/images/logo.svg')" /> -->
+        <img id="header-logo" :src="require('@/assets/images/Taproot_Web_Logo.svg')" />
         <!-- <div id="about-container">
           <object
             id="elder-flower"
