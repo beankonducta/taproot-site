@@ -21,7 +21,11 @@
     <!-- <img class="footer-img" :src="require('@/assets/images/amphora.svg')" /> -->
       <a class="footer-item" href="mailto:hello@augurybeverage.co"> Contact us</a>
       <a class="footer-item" href="mailto:hello@augurybeverage.co"> Wholesale Inquiry</a>
-
+      <br>
+      <p class="a">© {{ year }} Taproot Soda </p>
+      <br>
+      <br>
+      <p class="a">Site by <a target="_blank" href="https://beankonducta.com/">Beankonducta</a></p>
     </div>
 </div>
 </template>
@@ -40,6 +44,11 @@ export default {
     };
   },
   methods: {},
+  computed: {
+    year() {
+      return new Date().getFullYear();
+    },
+  },
 };
 </script>
 

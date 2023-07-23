@@ -262,7 +262,7 @@ body {
   background: #043939;
 }
 
-a {
+a, .a {
   color: white;
   text-decoration: none;
 }
@@ -286,6 +286,10 @@ a:active {
 @media screen and (max-width: 1099px) {
   a {
     font-size:.5rem;
+  }
+
+  .a {
+    font-size: .5rem;
   }
 
   .title {
@@ -331,6 +335,11 @@ a:active {
   a {
     font-size: 1rem;
   }
+
+  .a {
+    font-size: 1rem;
+  }
+
   .title {
 	font-size: 4rem;
   font-family: "BarmenoBold";
