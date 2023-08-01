@@ -5,7 +5,11 @@
 			<img :src="accentImage" :class="accentClass" />
 			<div class="title" :class="titleClass" :style="{ color: color }">{{ title }}</div>
 			<img class="image slide-in-can" v-bind:src="img" />
+			<div :class="captionClass">
 			<div class="caption" :style="{ color: accent }">{{ caption }}</div>
+			<div class="ingredient-title" :style="{ color: color }">Real flavors from:</div>
+			<div class="caption" :style="{ color: accent }">{{ ingredients }}</div>
+		</div>
 		</div>
 		<!-- <div class="cocktail" :style="{ background: this.color }"
 			:class="[isVisible ? 'slide-in' : 'slide-out', screenWidth <= minWidth ? 'hide' : '']">
@@ -39,7 +43,9 @@ export default {
 		cocktailHeader: String,
 		cocktailBody: String,
 		alc: Boolean,
-		accentSide: String
+		accentSide: String,
+		ingredients: String,
+		nutrition: String
 	},
 	data() {
 		return {
@@ -92,6 +98,9 @@ export default {
 		titleClass() {
 			return this.accentSide === "right" ? "title-right" : "title-left";
 		},
+		captionClass() {
+			return this.accentSide === "right" ? "caption-container-right" : "caption-container-left";
+		},
 		compColor() {
 			return tinycolor(this.color).complement().toHexString();
 		},
@@ -137,6 +146,24 @@ export default {
 	margin: 0 auto;
 }
 
+.caption-container-right {
+	position: absolute;
+	bottom: 10%;
+	width: 40%;
+	left: 10%;
+	text-align: left;
+	max-width: 400px;
+}
+
+.caption-container-left {
+	position: absolute;
+	bottom: 10%;
+	width: 40%;
+	right: 10%;
+	text-align: right;
+	max-width: 400px;
+}
+
 
 .title-right {
 	position: absolute;
@@ -169,6 +196,17 @@ export default {
 	width: 60%;
 	min-width: 280px;
 	max-width: 700px;
+}
+
+.ingredient-title {
+	font-size: 1rem;
+    font-family: "BarmenoRegular";
+    color: white;
+    text-transform: uppercase;
+    line-height: 1.2rem;
+    letter-spacing: .1rem;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .fade {

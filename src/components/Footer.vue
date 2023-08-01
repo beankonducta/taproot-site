@@ -1,33 +1,43 @@
 <template>
   <div>
-  <div class="footer">
-    <div id="about">
-      <div class="title">about</div>
-      <div class="text">
-        In 2023, we launched Augury Beverage Co. to offer a variety of delightful drinks to Salt Lake Valley and beyond.
-        <br />
-        <br />
-        Our diverse lineup includes bubbly hop-infused teas, refreshing tonics, and sparkling waters, all carefully crafted with handpicked, locally-sourced ingredients.
-        <br />
-        <br />
-        We are dedicated to creating great-tasting beverages without harmful additives. We hope you enjoy our drinks as much as we love making them.
+    <div class="footer">
+      <div id="about">
+        <div class="title">about</div>
+        <div class="text">
+          Taproot Soda is a proudly rooted Utah-based company, dedicated to
+          crafting delicious and refreshing sodas using locally sourced and
+          organic ingredients wherever possible. Our mission is to create
+          beverages that you can feel good about, with ingredients you can
+          pronounce and recognize.
+          <br /><br />
+          We believe in community and love our home state, so we've committed to
+          giving 1% back through local causes, as well as using environmentally
+          conscious production methods, packaging material and merch.
+          <br /><br />
+          Join us on our journey to redefine what it means to enjoy a soda,
+          whether by itself or as a cocktail mixer, and discover the authentic
+          taste of Utah in every sip of Taproot Soda. Cheers!
+        </div>
       </div>
-      
+
+      <WhereToBuy id="buy"></WhereToBuy>
     </div>
-    
-    <WhereToBuy id="buy"></WhereToBuy>
+    <div class="footer-inner">
+      <!-- <img class="footer-img" :src="require('@/assets/images/amphora.svg')" /> -->
+      <a class="footer-item" href="mailto:hello@taprootsoda.com"> Contact us</a>
+      <a class="footer-item" href="mailto:orders@taprootsoda.com">
+        Wholesale Inquiry</a
+      >
+      <br />
+      <p class="a">© {{ year }} Taproot Soda</p>
+      <br />
+      <br />
+      <p class="a">
+        Site by
+        <a target="_blank" href="https://beankonducta.com/">Beankonducta</a>
+      </p>
+    </div>
   </div>
-  <div class="footer-inner">
-    <!-- <img class="footer-img" :src="require('@/assets/images/amphora.svg')" /> -->
-      <a class="footer-item" href="mailto:hello@augurybeverage.co"> Contact us</a>
-      <a class="footer-item" href="mailto:hello@augurybeverage.co"> Wholesale Inquiry</a>
-      <br>
-      <p class="a">© {{ year }} Taproot Soda </p>
-      <br>
-      <br>
-      <p class="a">Site by <a target="_blank" href="https://beankonducta.com/">Beankonducta</a></p>
-    </div>
-</div>
 </template>
 
 <script>
@@ -69,10 +79,10 @@ export default {
   padding-top: 2vh;
   margin-top: -2vh;
   margin-bottom: 1vh;
-  font-size: calc(.2rem + 1vw);
+  font-size: calc(0.2rem + 1vw);
   font-family: "PGGothicHeadline-Regular";
   text-transform: uppercase;
-  letter-spacing: .12rem;
+  letter-spacing: 0.12rem;
   z-index: 99;
   width: 101%;
 }
@@ -84,7 +94,7 @@ export default {
 }
 
 .footer-item {
-  padding: .5rem;
+  padding: 0.5rem;
   margin-bottom: 0;
 }
 
@@ -112,5 +122,4 @@ export default {
   left: 1%;
   width: 15%;
 }
-
 </style>

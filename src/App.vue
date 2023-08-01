@@ -6,7 +6,7 @@
       :caption="product.caption" :color="product.color" :bg="product.bg" :accent="product.accent" :scrollY="scrollY"
       :cocktailHeader="alc ? product.cocktailHeader : product.mocktailHeader"
       :cocktailBody="alc ? product.cocktailBody : product.mocktailBody" :alc="alc"
-      :accentImage="product.accentImage" :accentSide="product.accentSide" />
+      :accentImage="product.accentImage" :accentSide="product.accentSide" :ingredients="product.ingredients" :nutrition="product.nutrition" />
     <Footer></Footer>
     <!-- <Product
       :key="products[currentProduct].title"
@@ -38,7 +38,9 @@ export default {
           accentImage: require("./assets/images/BBM.svg"),
           accentSide: "right",
           title: "Blackberry Mint",
-          caption: "We start with fresh Blackberry puree and add mint to create a refreshing, lightly sweetened soda.",
+          caption: "A light and fruity soda with a hint of refreshing mint",
+          ingredients: "Organic Cane Sugar, Oregon Blackberries, Mint Essential Oil",
+          nutrition: "",
           color: "#7e224b",
           bg: "#00996e",
           accent: "#bdcce9",
@@ -62,7 +64,9 @@ export default {
           accentImage: require("./assets/images/CL.svg"),
           accentSide: "left",
           title: "Cherry Limeade",
-          caption: "",
+          caption: "A familiar flavor, elevated by the tartness of real citrus and cherry",
+          ingredients: "Organic Cane Sugar, Cherries, Lime Juice",
+          nutrition: "",
           color: "#4eb748",
           bg: "#991b35",
           accent: "#fccfc6",
@@ -88,7 +92,9 @@ export default {
           accentImage: require("./assets/images/RB.svg"),
           accentSide: "right",
           title: "Rootbeer",
-          caption: "",
+          caption: "Our take on a classic rootbeer! Deep, spiced sweetness with complex herbal notes",
+          ingredients: "Organic Cane Sugar, Vanilla, Star Anise, Burdock",
+          nutrition: "",
           color: "#733213",
           bg: "#ae8269",
           accent: "#e0cfc4",
@@ -111,7 +117,9 @@ export default {
           accentImage: require("./assets/images/LLL.svg"),
           accentSide: "left",
           title: "Lemon Lime Lavender",
-          caption: "",
+          caption: "Just a touch of lavendar to elevate this classic flavor combo",
+          ingredients: "Raw Honey, Lime and Lemon Juice, Lavender Essential Oil",
+          nutrition: "",
           color: "#532b63",
           bg: "#6c8cc7",
           accent: "#c4d82e",
@@ -136,7 +144,9 @@ export default {
           accentImage: require("./assets/images/LGG.svg"),
           accentSide: "right",
           title: "Lemongrass Ginger",
-          caption: "",
+          caption: "Ginger ale with floral and herbal accents from lemongrass",
+          ingredients: "Raw Honey, Thai Lemongrass, Fresh pressed Ginger",
+          nutrition: "",
           color: "#884225",
           bg: "#76b043",
           accent: "#fede36",
@@ -158,7 +168,9 @@ export default {
           accentImage: require("./assets/images/SF.svg"),
           accentSide: "left",
           title: "Strawberry Fields",
-          caption: "",
+          caption: "A very fresh strawberry cream soda with edible glitter for a fun drinking experience",
+          ingredients: "Organic cane sugar, Strawberries, Vanilla, Edible Glitter",
+          nutrition: "",
           color: "#b70063",
           bg: "#d787a3",
           accent: "#f0d5dd",
@@ -262,9 +274,13 @@ body {
   background: #043939;
 }
 
-a, .a {
-  color: white;
+a {
+  color: #5bc5cd;
   text-decoration: none;
+}
+
+.a {
+  color: white;
 }
 
 a:hover {
@@ -272,7 +288,7 @@ a:hover {
 }
 
 a:visited {
-  color: #ffffff;
+  color: #5bc5cd;
 }
 
 a:visited:hover {

@@ -28,22 +28,22 @@ export default {
   data() {
     return {
       retailers: [
-        // {
-        //   name: "Blue Copper 2000",
-        //   address: "401 N 300 W",
-        //   city: "Salt Lake City",
-        //   state: "UT",
-        //   zip: "84103",
-        //   website: "https://bluecopperslc.com/",
-        // },
-        // {
-        //   name: "Blue Copper Coffee Room",
-        //   address: "179 W 900 S",
-        //   city: "Salt Lake City",
-        //   state: "UT",
-        //   zip: "84101",
-        //   website: "https://bluecopperslc.com/",
-        // },
+        {
+          name: "Blue Copper 2000",
+          address: "401 N 300 W",
+          city: "Salt Lake City",
+          state: "UT",
+          zip: "84103",
+          website: "https://bluecopperslc.com/",
+        },
+        {
+          name: "Blue Copper Coffee Room",
+          address: "179 W 900 S",
+          city: "Salt Lake City",
+          state: "UT",
+          zip: "84101",
+          website: "https://bluecopperslc.com/",
+        },
       ],
     };
   },
