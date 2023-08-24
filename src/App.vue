@@ -392,6 +392,7 @@ a:active {
   margin-top: 10px;
   font-size: 1.5rem;
 }
+}
 /* ===== Scrollbar CSS ===== */
   /* Firefox */
   * {
@@ -413,6 +414,5 @@ a:active {
     border-radius: 10px;
     border: 3px solid #5bc5cd;
   }
-}
 
 </style>
