@@ -108,12 +108,12 @@ export default {
 #about {
   text-align: left;
   padding: 5vw;
-  max-width: 400px;
+  max-width: 700px;
 }
 
 #buy {
   padding: 5vw;
-  max-width: 400px;
+  max-width: 700px;
 }
 
 .arrow {

@@ -392,6 +392,27 @@ a:active {
   margin-top: 10px;
   font-size: 1.5rem;
 }
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #043939 #5bc5cd;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #5bc5cd;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #043939;
+    border-radius: 10px;
+    border: 3px solid #5bc5cd;
+  }
 }
 
 </style>

@@ -74,7 +74,7 @@ export default {
 .spacer {
   height: 1vh;
   border-bottom: 1px solid white;
-  width: 50%;
+  width: 80%;
   margin-bottom: 1vh;
 }
 
