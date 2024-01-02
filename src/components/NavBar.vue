@@ -99,5 +99,6 @@ export default {
 
 .nav-item {
   padding: .5rem;
+  cursor: pointer;
 }
 </style>

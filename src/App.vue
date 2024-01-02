@@ -314,6 +314,7 @@ a:active {
 	text-transform: uppercase;
 	letter-spacing: .25rem;
   color: #5bc5cd;
+  margin-bottom: 35px;
 }
 
 .subtitle {
@@ -322,6 +323,7 @@ a:active {
 	text-transform: uppercase;
 	letter-spacing: .15rem;
   color: #5bc5cd;
+  margin-bottom: 35px;
 }
 
 .caption {
@@ -362,6 +364,7 @@ a:active {
 	text-transform: uppercase;
 	letter-spacing: .5rem;
   color: #5bc5cd;
+  margin-bottom: 35px;
 }
 
 .subtitle {
@@ -370,6 +373,7 @@ a:active {
 	text-transform: uppercase;
 	letter-spacing: .3rem;
   color: #5bc5cd;
+  margin-bottom: 25px;
 }
 
 .caption {

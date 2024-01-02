@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import tinycolor from "tinycolor2";
+// import tinycolor from "tinycolor2";
 /* eslint-disable */
 export default {
 	name: "Product",
@@ -102,7 +102,8 @@ export default {
 			return this.accentSide === "right" ? "caption-container-right" : "caption-container-left";
 		},
 		compColor() {
-			return tinycolor(this.color).complement().toHexString();
+			// return tinycolor(this.color).complement().toHexString();
+			return this.color;
 		},
 		yOffset() {
 			return this.scrollY - this.yPos;
