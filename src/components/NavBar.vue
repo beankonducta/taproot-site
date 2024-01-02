@@ -1,7 +1,7 @@
 <template>
   <div class="nav">
-    <a @click="scroll('products')" class="nav-item" href="#products">Our Drinks</a>
-    <a @click="scroll('about')" class="nav-item" href="#about">About</a>
+    <a @click="scroll('#products')" class="nav-item">Our Drinks</a>
+    <a @click="scroll('#about')" class="nav-item">About</a>
     <!-- <a @click="scroll('buy')" class="nav-item" href="#buy">Where To Buy</a> -->
     <!-- <a @click="scroll('contact')" class="nav-item" href="#contact">Contact</a> -->
     <div class="alc" v-if="alc" @click="switchAlc()" title="Click to swap drink ideas between alcoholic and non alcoholic">
@@ -46,7 +46,9 @@ export default {
   },  
   methods: {
     scroll(element) {
-      this.$refs[element].scrollIntoView()
+      document.querySelector(element).scrollIntoView({
+        behavior: "smooth",
+      });
     },
     switchAlc() {
       this.alc = !this.alc
