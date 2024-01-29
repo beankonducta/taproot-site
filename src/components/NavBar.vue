@@ -2,6 +2,7 @@
   <div class="nav">
     <a @click="scroll('#products')" class="nav-item">Our Drinks</a>
     <a @click="scroll('#about')" class="nav-item">About</a>
+    <a @click="scroll('#contact')" class="nav-item">Contact</a>
     <!-- <a @click="scroll('buy')" class="nav-item" href="#buy">Where To Buy</a> -->
     <!-- <a @click="scroll('contact')" class="nav-item" href="#contact">Contact</a> -->
     <div class="alc" v-if="alc" @click="switchAlc()" title="Click to swap drink ideas between alcoholic and non alcoholic">

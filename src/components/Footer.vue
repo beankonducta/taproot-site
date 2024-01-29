@@ -24,7 +24,7 @@
     </div>
     <div class="footer-inner">
       <!-- <img class="footer-img" :src="require('@/assets/images/amphora.svg')" /> -->
-      <a class="footer-item" href="mailto:hello@taprootsoda.com"> Contact us</a>
+      <a class="footer-item" id="contact" href="mailto:hello@taprootsoda.com"> Contact us</a>
       <a class="footer-item" href="mailto:orders@taprootsoda.com">
         Wholesale Inquiry</a
       >
