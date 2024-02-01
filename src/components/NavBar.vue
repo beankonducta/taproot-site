@@ -100,6 +100,8 @@ export default {
 
 .nav-item {
   padding: .5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   cursor: pointer;
 }
 </style>
