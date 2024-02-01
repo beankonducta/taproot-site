@@ -31,7 +31,6 @@
       <br />
       <p class="a">© {{ year }} Taproot Soda</p>
       <br />
-      <br />
       <p class="a">
         Site by
         <a target="_blank" href="https://beankonducta.com/">Beankonducta</a>
@@ -96,13 +95,6 @@ export default {
 .footer-item {
   padding: 0.5rem;
   margin-bottom: 0;
-}
-
-#contact {
-  font-size: calc(0.4rem + 1vw);
-  font-family: "PGGothicHeadline-Regular";
-  text-transform: uppercase;
-  letter-spacing: 0.12rem;
 }
 
 #about {
