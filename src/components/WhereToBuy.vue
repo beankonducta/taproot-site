@@ -66,22 +66,25 @@ export default {
   <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .where-to-buy {
+  height: 500px;
   position: relative;
-  background: #043939;
   text-align: left;
 }
 
 .spacer {
   height: 1vh;
   border-bottom: 1px solid white;
-  width: 80%;
+  width: 90%;
   margin-bottom: 1vh;
 }
 
 .inner {
-  max-height: 1000px;
+  max-height: 400px;
   overflow-x: hidden;
   overflow-y: auto;
+  padding: 10px;
+  margin-left: -10px;
+  background: linear-gradient(180deg, #043939 0%,  #033131 100%);
 }
 </style>
   

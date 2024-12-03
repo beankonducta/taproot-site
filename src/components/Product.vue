@@ -165,6 +165,24 @@ export default {
 	max-width: 400px;
 }
 
+.title {
+	animation: subtle-bounce 4s infinite;
+}
+
+@keyframes subtle-bounce {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-5px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
 
 .title-right {
 	position: absolute;
