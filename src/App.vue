@@ -365,6 +365,7 @@ a:active {
 	letter-spacing: .5rem;
   color: #5bc5cd;
   margin-bottom: 35px;
+  animation: float 6s ease-in-out infinite;
 }
 
 .subtitle {
@@ -374,13 +375,16 @@ a:active {
 	letter-spacing: .3rem;
   color: #5bc5cd;
   margin-bottom: 25px;
+  animation: float 7s ease-in-out infinite;
+  animation-delay: 0.5s;
 }
 
 .caption {
 	font-size: 1.5rem;
 	font-family: "PGGothicHeadline-Regular";
 	text-transform: uppercase;
-	letter-spacing: .12rem
+	letter-spacing: .12rem;
+  animation: bounce 4s ease-in-out infinite;
 }
 
 .text {
@@ -396,7 +400,17 @@ a:active {
   margin-top: 10px;
   font-size: 1.5rem;
 }
+
+  a {
+    transition: transform 0.3s ease;
+  }
+
+  a:hover {
+    transform: translateY(-3px);
+  }
 }
+
+
 /* ===== Scrollbar CSS ===== */
   /* Firefox */
   * {
@@ -418,5 +432,24 @@ a:active {
     border-radius: 10px;
     border: 3px solid #5bc5cd;
   }
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.product-image {
+  transition: transform 0.5s ease;
+}
+
+.product-image:hover {
+  transform: scale(1.01) translateY(-2px);
+}
 
 </style>

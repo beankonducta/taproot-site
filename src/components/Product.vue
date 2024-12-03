@@ -4,7 +4,7 @@
 			:id="`${title.replace(' ', '-')}`">
 			<img :src="accentImage" :class="accentClass" />
 			<div class="title" :class="titleClass" :style="{ color: color }">{{ title }}</div>
-			<img class="image slide-in-can" v-bind:src="img" />
+			<img class="image slide-in-can product-image" v-bind:src="img" :alt="title"/>
 			<div :class="captionClass">
 			<div class="caption" :style="{ color: accent }">{{ caption }}</div>
 			<div class="ingredient-title" :style="{ color: color }">Real flavors from:</div>
@@ -154,6 +154,7 @@ export default {
 	left: 10%;
 	text-align: left;
 	max-width: 400px;
+	z-index: 999;
 }
 
 .caption-container-left {
@@ -163,6 +164,7 @@ export default {
 	right: 10%;
 	text-align: right;
 	max-width: 400px;
+	z-index: 999;
 }
 
 .title {
